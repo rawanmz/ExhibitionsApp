@@ -1,5 +1,7 @@
 package com.example.exhibitionsapp
 
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,11 @@ private lateinit var binding: ActivityMainBinding
 
      binding = ActivityMainBinding.inflate(layoutInflater)
      setContentView(binding.root)
+      val receiver = MyBroadCastReceiver()
+
+        IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).apply {
+            registerReceiver(receiver,this)
+        }
 
         val navView: BottomNavigationView = binding.navView
 
