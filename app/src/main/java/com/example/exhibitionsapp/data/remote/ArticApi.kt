@@ -11,6 +11,6 @@ interface ArticApi {
     suspend fun getExhibitions(
         @Url url: String = "https://api.artic.edu/api/v1/exhibitions",
         @Query("page") pageNumber: Int = 1,
-        @Query("limit") pageLimitSize: Int = 100,
+        @Query("limit") pageLimitSize: Int = 50,
     ): Response<ExhibitionResponse>
 }
